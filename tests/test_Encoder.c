@@ -16,7 +16,6 @@
 #define TEST_ARRAY "Hello BuddyBud \0"
 #define SECRET_CODE "77, 112, 33, 105, 98, 116, 33, 109, 112, 104, 115, 98, 101, 112, 34, 33"
 #define CODE 77, 112, 33, 105, 98, 116, 33, 109, 112, 104, 115, 98, 101, 112, 34, 33
-#define OFFSET 1
 
 
 static char* buffer = NULL;
