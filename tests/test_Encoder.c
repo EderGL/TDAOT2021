@@ -20,7 +20,6 @@
 
 static char* buffer = NULL;
 static int code[] = {CODE};
-static size_t offset= OFFSET;
 
 void setUp(void){
     buffer = calloc(BUFSIZ, sizeof(char));
@@ -52,6 +51,14 @@ void test_encoderGetMessage(void){
 }
 
 
+void test_encoderEncodeMessage(void){
+    puts("Positive Test Encode Message");
+    Message frame = newMessageContainer(TEST_ARRAY);
+    getMessage(&frame);
+    TEST_ONLY();
+}
+
+
 int main(void){
 
     int lenght = (sizeof(code)/sizeof(int)-1);
@@ -60,6 +67,7 @@ int main(void){
     RUN_TEST(test_encoderInit, __LINE__);
     RUN_TEST(test_encoderSetMessage, __LINE__);
     RUN_TEST(test_encoderGetMessage, __LINE__);
+    RUN_TEST(test_encoderEncodeMessage, __LINE__);
 
     Message test = newMessageContainer(SECRET_CODE);
     Message test2 = newMessageContainer(SECRET_CODE);
